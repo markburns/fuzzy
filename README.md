@@ -1,12 +1,12 @@
-Tired of bugs because of typos?
-
-Let fuzzy come to the rescue
-
 METHOD MISSING?
 ---------------
 
 NOPE!
 =====
+
+Tired of bugs because of typos?
+
+Let fuzzy come to the rescue
 
 ```ruby
 class Account
