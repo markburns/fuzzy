@@ -10,6 +10,8 @@ NOPE!
 
 ```ruby
 class Account
+  include Fuzzy
+
   def pay! other_account, amount
     other_account.balance += amount
     balance -= amount
