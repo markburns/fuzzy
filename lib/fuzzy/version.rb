@@ -1,3 +1,3 @@
 module Fuzzy
-  VERSION = "9000.0.1"
+  VERSION = "9000.0.2"
 end
