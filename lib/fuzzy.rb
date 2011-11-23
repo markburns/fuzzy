@@ -1,7 +1,7 @@
 require "fuzzy/version"
 require 'fuzzystringmatch'
 
-module FuzzyBear
+module Fuzzy
    def method_missing sym, *args, &block
     chosen_method = fuzzy_match sym
     puts "You requested #{sym}, our survey says: #{chosen_method}"
