@@ -8,8 +8,13 @@ describe "Fuzzy" do
       def cheese
 
       end
+
+      def shoe
+
+      end
     end
 
-    Egg.new.fuzzy_match(:choose).should == :cheese
+    Egg.new.fuzzy_match(:chase).should == :cheese
+    Egg.new.fuzzy_match(:shoes).should == :shoe
   end
 end
