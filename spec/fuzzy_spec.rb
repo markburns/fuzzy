@@ -1,20 +1,46 @@
-require './lib/object'
+debugger
+require './lib/fuzzy'
+
+
 describe "Fuzzy" do
-  it "uses a fuzzy match algorithm to get the nearest matching method name" do
-    class Egg
-      instance_methods.each { |meth|
-        undef_method(meth) unless meth.to_s =~ /\A__/ or %w(methods fuzzy_match).include? meth.to_s
-      }
-      def cheese
-
-      end
-
-      def shoe
-
-      end
+  class BlankishSlate
+    instance_methods.each do |meth|
+      undef_method(meth) unless(meth.to_s =~ /\A__/ or %w(method_missing eval debugger send methods fuzzy_match).include? meth.to_s)
     end
+  end
 
-    Egg.new.fuzzy_match(:chase).should == :cheese
-    Egg.new.fuzzy_match(:shoes).should == :shoe
+  describe "#fuzzy_match" do
+    it "matches the nearest method name" do
+      class Egg < BlankishSlate #so we don't match things not in the tests
+        include FuzzyBear
+        def cheese
+        end
+
+        def shoe
+        end
+      end
+
+      Egg.new.fuzzy_match(:chase).should == :cheese
+      Egg.new.fuzzy_match(:shoes).should == :shoe
+    end
+  end
+
+  describe "#method_missing" do
+    it "calls the method you meant to call" do
+      class Horse < BlankishSlate
+        include FuzzyBear
+
+        def dog
+          "cat"
+        end
+
+        def spider
+          "fly"
+        end
+      end
+
+      Horse.new.god.should == "cat"
+      Horse.new.spyder.should == "fly"
+    end
   end
 end
