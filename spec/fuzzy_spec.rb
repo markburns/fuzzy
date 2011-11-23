@@ -12,7 +12,7 @@ describe "Fuzzy" do
   describe "#fuzzy_match" do
     it "matches the nearest method name" do
       class Egg < BlankishSlate #so we don't match things not in the tests
-        include FuzzyBear
+        include Fuzzy
         def cheese
         end
 
@@ -28,7 +28,7 @@ describe "Fuzzy" do
   describe "#method_missing" do
     it "calls the method you meant to call" do
       class Horse < BlankishSlate
-        include FuzzyBear
+        include Fuzzy
 
         def dog
           "cat"

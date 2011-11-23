@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fuzzy (0.0.1)
+    fuzzy (9000.0.1)
       fuzzy-string-match
 
 GEM
