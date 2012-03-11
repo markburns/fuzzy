@@ -4,6 +4,8 @@ METHOD MISSING?
 NOPE!
 =====
 
+![](http://static.fjcdn.com/comments/Nope.+Chuck+Testa+_3e6d9d5f7240274f268d7359b559da6b.jpg)
+
 Tired of bugs because of typos?
 
 Let fuzzy come to the rescue
